@@ -1,0 +1,19 @@
+*
+{
+	font-size: 24px;
+}
+#p1
+{
+	color: blue;
+}
+
+.hidden 
+{
+	opacity: 0;
+	color: green;
+}
+
+.show
+{
+	opacity: 1;
+}
