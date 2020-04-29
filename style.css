@@ -5,17 +5,6 @@ body
 	font-size: 24px;
 }
 
-a:link
-{
-	color:black;
-	text-decoration:none;
-}
-
-a:visited
-{
-	color:black;
-}
-
 #p1
 {
 	color: blue;
@@ -30,46 +19,4 @@ a:visited
 .show
 {
 	opacity: 1;
-}
-
-.news
-{
-	min-height: 100%;
-	height: auto;
-	width: 100%;
-	font-size: 16px;
-}
-
-#first
-{
-	margin-top: 10%;
-    text-align: right;
-    float:left;
-    height: auto;
-    width:40%;
-}
-
-#time
-{
-	margin-top: 10%;
-    text-align: center;
-    float:left;
-    height: auto;
-    width:auto;
-}
-
-#second
-{
-	margin-top: 10%;
-    text-align: left;
-    float:left;
-    height: auto;
-    width:auto;
-}
-
-#key
-{
-	margin-top:40%;
-	float:left;
-	width: 5%;
 }
