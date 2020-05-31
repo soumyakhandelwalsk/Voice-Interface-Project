@@ -64,6 +64,8 @@ function myMove(len, keyword)
         a[i].innerHTML = keyword;
         a[i].className = 'real';
         a[i].style.top = '1000px';
+        //a[i].style.width = '3%';
+        //a[i].textAlign = 'center';
         a[i].id = 't'+i;
         t.appendChild(a[i]);
         tdiv(i, len);
@@ -103,6 +105,7 @@ function myMove(len, keyword)
     document.getElementById('key').innerHTML = "Back<br>Time<br>Space";
     var n = get_time();
     n = n.substring(0,n.length-5);
+    //'https://cors-anywhere.herokuapp.com/'+
     $(document).ready(function(){
     let url = 'http://newsapi.org/v2/everything?' +
         'qInTitle='+keyword+'&' +
@@ -156,16 +159,10 @@ function myMove(len, keyword)
           str = change_apostrophe(str);
           var published = news.articles[i].publishedAt.substring(11,16);
           fdiv(str.substring(0,str.search(keyword)).link(news.articles[i].url),i, len);
-          sdiv(str.substring(str.search(keyword)+keyword.length).link(news.articles[i].url)+" - "+published,i, len);
+          sdiv((str.substring(str.search(keyword)+keyword.length)+" - "+published).link(news.articles[i].url),i, len);
           var T = document.getElementById('t'+i);
            T.innerHTML= keyword.link(news.articles[i].url);
         }
-        //$(document).ready(function(){
-        /*$("#first").animate({
-          marginLeft: "3%",
-          marginRight: "0%"
-          }, 1000 );
-        });*/
         for (var i = 0; i<len; i++)
         {
           $("#f"+i).animate({
@@ -185,13 +182,9 @@ function myMove(len, keyword)
     var f = document.createElement('div');
     f.innerHTML = str;
     f.className = 'real';
+    f.classList.add("fst2");
     f.id = "f"+i; 
     f.style.top= (20*i)+'px';
-    //f.style.display="none";
-    f.style.marginRight = "6%";
-    f.style.marginLeft="-6%";
-    f.style.opacity = "0";
-    f.style.right="0%";
     f.onmouseover = function() {mouseOver(i, len)};
     f.onmouseout = function() {mouseOut(i, len)};
     document.getElementById('first').appendChild(f);
@@ -202,10 +195,9 @@ function myMove(len, keyword)
     var s = document.createElement('div');
     s.innerHTML = str;
     s.className = 'real';
+    s.classList.add("snd2");
     s.id = "s"+i;
     s.style.top= (20*i)+'px';
-    s.style.left="10.5%";
-    s.style.opacity = "0";
     s.onmouseover = function() {mouseOver(i, len)};
     s.onmouseout = function() {mouseOut(i, len)};
     document.getElementById('second').appendChild(s);
@@ -214,6 +206,8 @@ function myMove(len, keyword)
   function tdiv(i, len)
   {
     var a = document.getElementById('t'+i);
+    a.style.width="100%";
+    a.style.textAlign="center";
     a.onmouseover = function() {mouseOver(i, len)};
     a.onmouseout = function() {mouseOut(i, len)};
   }
